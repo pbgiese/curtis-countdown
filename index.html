@@ -108,7 +108,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>COUNTDOWN TO EXIT</h1>
+        <h1>EXIT SHOULD HAVE HAPPENED THIS MANY HOURS/MINUTES AGO</h1>
         <div id="countdown" class="countdown">
             <div class="time-unit">
                 <span class="time-value" id="hours">00</span>
@@ -130,12 +130,7 @@
             const now = new Date();
             const target = new Date(2025, 10, 20, 18, 0, 0); // November is month 10 (0-indexed)
 
-            const difference = target - now;
-
-            if (difference <= 0) {
-                document.getElementById('countdown').innerHTML = '<div class="completed">Time\'s up!</div>';
-                return;
-            }
+            const difference = now - target;
 
             const hours = Math.floor(difference / (1000 * 60 * 60));
             const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
